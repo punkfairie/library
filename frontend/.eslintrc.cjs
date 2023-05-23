@@ -26,6 +26,14 @@ module.exports = {
                     'allowEmptyLines': true,
                 }],
                 'vue/singleline-html-element-content-newline': 'off',
+                'vue/v-for-delimiter-style': ['error', 'in'],
+                'vue/define-macros-order': ['error', {
+                  'order': ["defineOptions", "defineProps", "defineEmits", 'defineSlots']
+                }],
+                "vue/no-useless-v-bind": ['error', {
+                  "ignoreIncludesComment": false,
+                  "ignoreStringEscape": true
+                }]
             },
         },
         {
