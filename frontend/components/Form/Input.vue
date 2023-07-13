@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{label?: string, name:string, type?: string, modelValue: any}>()
+defineProps<{label?: string, name:string, type?: string, modelValue?: any}>()
 defineEmits(['update:modelValue'])
 </script>
 
@@ -9,7 +9,6 @@ defineEmits(['update:modelValue'])
   <div>
     <label v-if="label" :for="name">{{ label }}</label>
 
-    <!--suppress RequiredAttributes -->
     <input
       :id="name"
       :type="type ?? 'text'"
