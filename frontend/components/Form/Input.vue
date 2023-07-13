@@ -3,7 +3,7 @@ defineProps<{label?: string, name:string, type?: string, modelValue: any}>()
 defineEmits(['update:modelValue'])
 </script>
 
-<!----------------------------------------------------------------------------------- TEMPLATE ---->
+<!--------------------------------------------------------------- TEMPLATE ---->
 
 <template>
   <div>
@@ -21,7 +21,7 @@ defineEmits(['update:modelValue'])
   </div>
 </template>
 
-<!-------------------------------------------------------------------------------------- STYLE ---->
+<!------------------------------------------------------------------ STYLE ---->
 
 <style scoped lang="postcss">
 div {
