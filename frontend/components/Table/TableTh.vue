@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
+defineProps<{actions?: boolean}>()
 </script>
 
 <template>
-  <th><slot /></th>
+  <th :class="{actions: actions}"><slot /></th>
 </template>
 
 <style lang="postcss">
@@ -13,5 +13,11 @@ th {
 
   @apply first-of-type:ps-0;
   @apply last-of-type:ps-3.5 last-of-type:pe-0 last-of-type:relative;
+}
+
+.actions a {
+  @apply me-3;
+
+  @apply last-of-type:me-0;
 }
 </style>
