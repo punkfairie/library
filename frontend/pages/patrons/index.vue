@@ -33,7 +33,7 @@ const patrons = [
         <tr v-for="(patron, index) in patrons" :key="index">
           <TableTd>
             <div>{{ patron.name }}</div>
-            <StateSecondaryInfo>{{ patron.email }}</StateSecondaryInfo>
+            <SecondaryInfo>{{ patron.email }}</SecondaryInfo>
           </TableTd>
 
           <TableTd>
@@ -44,9 +44,7 @@ const patrons = [
 
           <TableTd>
             <div>{{ patron.checkedOut }} books</div>
-            <StateSecondaryInfo>
-              {{ patron.overdue }} overdue
-            </StateSecondaryInfo>
+            <SecondaryInfo>{{ patron.overdue }} overdue</SecondaryInfo>
           </TableTd>
 
           <TableTd>
