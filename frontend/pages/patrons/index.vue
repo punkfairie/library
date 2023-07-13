@@ -16,52 +16,52 @@ const patrons = [
 
 <template>
   <section>
-    <table>
+    <Table>
 
-      <thead>
+      <TableThead>
         <tr>
-          <th>Name</th>
-          <th>Status</th>
-          <th>Checked Out</th>
-          <th>Fines</th>
-          <th></th>
+          <TableTh>Name</TableTh>
+          <TableTh>Status</TableTh>
+          <TableTh>Checked Out</TableTh>
+          <TableTh>Fines</TableTh>
+          <TableTh></TableTh>
         </tr>
-      </thead>
+      </TableThead>
 
-      <tbody>
+      <TableTbody>
 
         <tr v-for="(patron, index) in patrons" :key="index">
-          <td>
+          <TableTd>
             <div>{{ patron.name }}</div>
             <div class="secondary-info">{{ patron.email }}</div>
-          </td>
+          </TableTd>
 
-          <td>
+          <TableTd>
             <span class="badge" :class="{
               'badge-good': patron.status === 'Active',
               'badge-bad': patron.status === 'Overdue',
             }">{{ patron.status }}</span>
-          </td>
+          </TableTd>
 
-          <td>
+          <TableTd>
             <div>{{ patron.checkedOut }} books</div>
             <div class="secondary-info">{{ patron.overdue }} overdue</div>
-          </td>
+          </TableTd>
 
-          <td>
+          <TableTd>
             <div>${{ patron.fines }}</div>
-          </td>
+          </TableTd>
 
-          <td class="actions">
+          <TableTd class="actions">
             <a href="#">Check Out</a>
             <a href="#">View</a>
             <a href="#">Edit</a>
-          </td>
+          </TableTd>
         </tr>
 
-      </tbody>
+      </TableTbody>
 
-    </table>
+    </Table>
   </section>
 </template>
 
@@ -70,39 +70,6 @@ const patrons = [
 <style scoped lang="postcss">
 section {
   @apply w-full px-10;
-}
-
-table {
-  @apply w-full;
-}
-
-thead {
-  @apply border-b border-pink-400/80;
-}
-
-th {
-  @apply py-3.5 px-3;
-  @apply font-bold text-left;
-
-  @apply first-of-type:ps-0;
-  @apply last-of-type:ps-3.5 last-of-type:pe-0 last-of-type:relative;
-}
-
-tbody {
-  @apply divide-y divide-pink-400/40;
-}
-
-td {
-  @apply py-5 px-3 whitespace-nowrap;
-
-  @apply first-of-type:ps-0;
-  @apply last-of-type:pe-0 last-of-type:text-end;
-
-  div {
-    @apply mt-1;
-
-    @apply first-of-type:mt-0;
-  }
 }
 
 .badge {
