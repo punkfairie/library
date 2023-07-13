@@ -51,7 +51,7 @@ const patrons = [
             <div>${{ patron.fines }}</div>
           </TableTd>
 
-          <TableTd class="actions">
+          <TableTd actions>
             <a href="#">Check Out</a>
             <a href="#">View</a>
             <a href="#">Edit</a>
@@ -73,11 +73,5 @@ section {
 
 .secondary-info {
   @apply text-black/50;
-}
-
-.actions a {
-  @apply me-3;
-
-  @apply last-of-type:me-0;
 }
 </style>

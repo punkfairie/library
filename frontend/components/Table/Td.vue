@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
+defineProps<{actions?: boolean}>()
 </script>
 
 <template>
-  <td><slot /></td>
+  <td :class="{actions: actions}"><slot /></td>
 </template>
 
 <style lang="postcss">
@@ -18,5 +18,11 @@ td {
 
     @apply first-of-type:mt-0;
   }
+}
+
+.actions a {
+  @apply me-3;
+
+  @apply last-of-type:me-0;
 }
 </style>
