@@ -33,7 +33,7 @@ const patrons = [
         <tr v-for="(patron, index) in patrons" :key="index">
           <TableTd>
             <div>{{ patron.name }}</div>
-            <div class="secondary-info">{{ patron.email }}</div>
+            <StateSecondaryInfo>{{ patron.email }}</StateSecondaryInfo>
           </TableTd>
 
           <TableTd>
@@ -44,7 +44,9 @@ const patrons = [
 
           <TableTd>
             <div>{{ patron.checkedOut }} books</div>
-            <div class="secondary-info">{{ patron.overdue }} overdue</div>
+            <StateSecondaryInfo>
+              {{ patron.overdue }} overdue
+            </StateSecondaryInfo>
           </TableTd>
 
           <TableTd>
@@ -69,9 +71,5 @@ const patrons = [
 <style scoped lang="postcss">
 section {
   @apply w-full px-10;
-}
-
-.secondary-info {
-  @apply text-black/50;
 }
 </style>
