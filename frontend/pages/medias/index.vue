@@ -15,6 +15,7 @@ const mediaList = computed(() => {
           <TableTh>Copies</TableTh>
           <TableTh>Checked Out</TableTh>
           <TableTh actions>
+            <Dropdown :options="['books', 'films', 'albums']">Type</Dropdown>
             <PrimaryButton>Add New</PrimaryButton>
           </TableTh>
         </tr>
@@ -31,7 +32,9 @@ const mediaList = computed(() => {
 
           <TableTd>
             <div>{{ media.checkedOut }}</div>
-            <SecondaryInfo>{{ media.holds.length }} on hold</SecondaryInfo>
+            <SecondaryInfo v-if="media.holds.length > 0">
+              {{ media.holds.length }} on hold
+            </SecondaryInfo>
           </TableTd>
 
           <TableTd actions>
@@ -46,5 +49,7 @@ const mediaList = computed(() => {
 </template>
 
 <style scoped lang="postcss">
-
+section {
+  @apply w-full px-10;
+}
 </style>
