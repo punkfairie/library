@@ -44,9 +44,11 @@ import patrons from '@data/patrons'
           </TableTd>
 
           <TableTd actions>
-            <a href="#">Check Out</a>
-            <a href="#">View</a>
-            <a href="#">Edit</a>
+            <NuxtLink :to="`/patrons/${patron.id}/checkout`">
+              Check Out
+            </NuxtLink>
+            <NuxtLink :to="`/patrons/${patron.id}`">View</NuxtLink>
+            <NuxtLink :to="`/patrons/${patron.id}/edit`">Edit</NuxtLink>
           </TableTd>
         </tr>
 
