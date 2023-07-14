@@ -25,7 +25,7 @@ const patrons = [
           <TableTh>Checked Out</TableTh>
           <TableTh>Fines</TableTh>
           <TableTh actions>
-            <a href="#">Add New</a>
+            <PrimaryButton>Add New</PrimaryButton>
           </TableTh>
         </tr>
       </TableThead>
