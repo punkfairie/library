@@ -6,7 +6,7 @@
 
       <nav>
         <NuxtLink to="/patrons">Patrons</NuxtLink>
-        <NuxtLink to="/catalog">Catalog</NuxtLink>
+        <NuxtLink to="/medias">Catalog</NuxtLink>
         <NuxtLink to="/account">Account</NuxtLink>
       </nav>
     </header>
