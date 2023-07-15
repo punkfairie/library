@@ -7,19 +7,24 @@ const emit = defineEmits<{
   select: [item: string | number]
 }>()
 
-const open = ref(false)
+const [open, toggleOpen] = useToggle()
 
 const select = function (item) {
   emit('select', typeof item === 'object' ? item.id : item)
+  toggleOpen(false)
 }
+
+const dropdown = ref(null)
+onClickOutside(dropdown, () => toggleOpen(false))
 </script>
 
 <template>
-  <div>
-    <PrimaryButton @click="open = !open">
+  <div ref="dropdown">
+    <PrimaryButton @click="toggleOpen()">
       <slot /> &downarrow;
     </PrimaryButton>
 
+    <!--suppress VueUnrecognizedDirective -->
     <ul v-show="open" v-bind="$attrs">
       <li v-for="(item, index) in options" :key="index" @click="select(item)">
         <template v-if="typeof item === 'object'">

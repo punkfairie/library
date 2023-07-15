@@ -4,6 +4,8 @@ import medias from '@data/medias'
 const mediaList = computed(() => {
   return medias.filter((m) => m.type === 'book')
 })
+
+const category = ref('Books')
 </script>
 
 <template>
@@ -15,7 +17,10 @@ const mediaList = computed(() => {
           <TableTh>Copies</TableTh>
           <TableTh>Checked Out</TableTh>
           <TableTh actions>
-            <Dropdown :options="['books', 'films', 'albums']">Type</Dropdown>
+            <Dropdown :options="['Books', 'Films', 'Albums']"
+                      @select="(i) => category = (i as string)">
+              {{ category }}
+            </Dropdown>
             <PrimaryButton>Add New</PrimaryButton>
           </TableTh>
         </tr>
