@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import medias from '@data/medias'
 
-const mediaList = computed(() => {
-  return medias.filter((m) => m.type === 'book')
-})
-
 const category = ref('Books')
+
+const mediaList = computed(() => {
+  return medias.filter((m) => {
+    return m.type === category.value.toLowerCase().slice(0, -1)
+  })
+})
 </script>
 
 <template>
@@ -18,7 +20,7 @@ const category = ref('Books')
           <TableTh>Checked Out</TableTh>
           <TableTh actions>
             <Dropdown :options="['Books', 'Films', 'Albums']"
-                      @select="(i) => category = (i as string)">
+                      @select="(i) => (category = (i as string))">
               {{ category }}
             </Dropdown>
             <PrimaryButton>Add New</PrimaryButton>
