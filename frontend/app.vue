@@ -2,7 +2,9 @@
   <div class="page">
 
     <header>
-      <h1><NuxtLink to="/">Bibliothecary</NuxtLink></h1>
+      <h1>
+        <NuxtLink to="/">Bibliothecary</NuxtLink>
+      </h1>
 
       <nav>
         <NuxtLink to="/patrons">Patrons</NuxtLink>
@@ -43,11 +45,11 @@ header {
 }
 
 main {
-  @apply grow flex justify-center;
+  @apply grow flex justify-center gap-x-5;
 }
 
 section {
-  @apply p-4;
+  @apply py-4 px-5;
 }
 
 footer {
@@ -60,9 +62,12 @@ nav a {
   @apply opacity-70;
 }
 
-h1,
-h2 {
+h1 {
   @apply text-2xl uppercase italic font-bold;
+}
+
+h2 {
+  @apply text-xl font-bold;
 }
 
 header h1 {
@@ -81,6 +86,11 @@ main a {
 }
 
 p {
-  @apply mb-2;
+  @apply mb-2 last:mb-0;
+}
+
+hr {
+  @apply border-pink-400/40;
+  @apply mt-2 mb-3;
 }
 </style>

@@ -62,6 +62,6 @@ import patrons from '@data/patrons'
 
 <style scoped lang="postcss">
 section {
-  @apply w-full px-10;
+  @apply w-full;
 }
 </style>

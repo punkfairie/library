@@ -1,14 +1,16 @@
 <script setup lang="ts">
-defineProps<{actions?: boolean}>()
+defineProps<{ actions?: boolean }>()
 </script>
 
 <template>
-  <th :class="{actions: actions}"><slot /></th>
+  <th :class="{actions: actions}">
+    <slot />
+  </th>
 </template>
 
 <style lang="postcss">
 th {
-  @apply py-3.5 px-3;
+  @apply pb-3.5 px-3;
   @apply font-bold text-left;
 
   @apply first-of-type:ps-0;

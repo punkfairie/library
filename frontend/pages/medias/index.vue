@@ -57,6 +57,6 @@ const mediaList = computed(() => {
 
 <style scoped lang="postcss">
 section {
-  @apply w-full px-10;
+  @apply w-full;
 }
 </style>
